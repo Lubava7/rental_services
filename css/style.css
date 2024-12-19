@@ -2,27 +2,30 @@
 
 html,
 body {
-  padding: 0;
   margin: 0;
   font-family: 'Merriweather', sans-serif;
-  scroll-behavior: smooth;
   color: var(--text-main);
 }
 
+body {
+  padding: 0 40px;
+}
+
 header {
-  width: 100%;
   display: flex;
   flex-direction: column;
+  margin-bottom: 60px;
 }
 
 header container {
-  width: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 header container:nth-child(1) {
-  justify-content: space-around;
+  padding: 20px;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -36,7 +39,6 @@ header container:nth-child(2) div {
   background-color: var(--color-accent);
   border-radius: 10px 0 0 10px;
   padding-left: 30px;
-  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -60,7 +62,13 @@ header button {
   border-radius: 10px;
   border: none;
   background-color: var(--white);
+}
+
+header button a {
+  text-decoration: none;
   color: var(--color-accent);
+  font-weight: 700;
+  font-size: 1.1rem;
 }
 
 content {
@@ -68,6 +76,7 @@ content {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  margin-bottom: 60px;
 }
 
 content container {
@@ -76,12 +85,12 @@ content container {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+  margin-bottom: 40px;
 }
 
 content container div {
   background-color: var(--bg-secondary);
   border-radius: 10px;
-  margin-right: 20px;
   padding: 10px;
   width: 230px;
   height: 130px;
@@ -89,6 +98,10 @@ content container div {
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+}
+
+content container div:not(:last-child) {
+  margin-right: 20px;
 }
 
 content container div img {
@@ -117,13 +130,7 @@ content button {
   color: var(--color-accent);
 }
 
-content,
 footer {
-  padding: 0 40px;
-}
-
-footer {
-  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -138,11 +145,41 @@ footer div p {
   color: var(--text-secondary);
 }
 
-/* @media (min-width: 849px) {
-  header {
-    flex-direction: column-reverse;
+footer img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+@media (max-width: 1024px) {
+  body {
+    padding: 0 10px;
   }
+
+  header container:nth-child(2) {
+    flex-direction: column;
+  }
+
+  header container:nth-child(2) div {
+    padding-bottom: 40px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+  }
+
   content container {
     flex-wrap: wrap;
   }
-} */
+  content container div {
+    margin-bottom: 10px;
+  }
+
+  footer {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 1024px) {
+  header container:nth-child(2) div {
+    width: 80%;
+  }
+}
