@@ -130,6 +130,11 @@ content button {
   color: var(--color-accent);
 }
 
+content button a {
+  text-decoration: none;
+  color: var(--color-accent);
+}
+
 footer {
   display: flex;
   flex-direction: row;
